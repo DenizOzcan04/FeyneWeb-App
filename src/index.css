@@ -1,0 +1,99 @@
+/* Global temel ayarlar (sabit açık tema) */
+:root{
+  --bg:#f6f8fc;
+  --fg:#0f172a;
+  --muted:#475569;
+
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --ring:#eef2ff;
+
+  --primary:#3b82f6;
+  --primary-fg:#ffffff;
+
+  --success:#22c55e;
+  --danger:#ef4444;
+}
+
+/* Reset */
+*{ box-sizing:border-box }
+html, body, #root { width:100%; min-height:100%; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+/* Bağlantılar ve form elemanları */
+a{ color:inherit; text-decoration:none; }
+button,input,select{ font:inherit }
+
+/* Butonlar */
+.btn{
+  padding:.55rem .9rem;
+  border-radius:.6rem;
+  border:1px solid var(--border);
+  background:var(--card);
+  cursor:pointer;
+}
+.btn.primary{ background:var(--primary); color:var(--primary-fg); border-color:transparent }
+.btn.ghost{ background:transparent }
+.btn.danger{ border-color:var(--danger); color:var(--danger) }
+
+/* Kart ve grid yardımcıları */
+.card{ background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1rem }
+.card-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem }
+@media (max-width:900px){ .card-grid{ grid-template-columns:1fr } }
+
+.input, .select{
+  padding:.55rem .75rem;
+  border:1px solid var(--border);
+  border-radius:.6rem;
+  background:var(--card);
+  color:var(--fg);
+}
+
+/* --- Admin layout (Dashboard/Tasks/Settings) --- */
+.layout{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  min-height:100vh;
+}
+
+.sidebar{
+  border-right:1px solid var(--border);
+  padding:1rem .8rem;
+  display:flex; flex-direction:column; gap:.5rem;
+}
+
+.brand{ font-weight:800; letter-spacing:.3px; margin-bottom:.6rem }
+.nav a{ display:flex; align-items:center; gap:.6rem; padding:.55rem .7rem; border-radius:.6rem; color:var(--muted) }
+.nav a.active{ background:var(--ring); color:var(--fg); font-weight:600 }
+
+/* >>> Tam genişlik: max-width ve margin:auto kaldırıldı */
+.topbar{
+  display:flex; align-items:center; gap:.6rem; justify-content:flex-end;
+  padding:1rem 1.6rem;
+  border-bottom:1px solid var(--border);
+  width:100%;
+}
+
+.content{
+  padding:1.2rem 1.6rem;
+  width:100%;
+}
+
+/* yardımcılar */
+.hr{ height:1px; background:var(--border); margin:1rem 0 }
+
+/* Dashboard yardımcıları */
+.grid-2 { display:grid; grid-template-columns: 1.2fr 1fr; gap:1rem; }
+.section-title { margin: 1rem 0 .6rem; font-weight: 700; font-size: 18px; }
+.kpi { display:flex; align-items:flex-start; gap:.6rem; }
+.kpi .label { font-size:12px; color:var(--muted); }
+.kpi .value { font-size:28px; font-weight:800; }
+.right-actions { margin-left:auto; display:flex; gap:.5rem; }
+.legend { display:flex; gap:10px; align-items:center; margin-top:.4rem; font-size:12px; color:var(--muted); }
+.dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
