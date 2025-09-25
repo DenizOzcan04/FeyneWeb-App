@@ -226,7 +226,7 @@ function Steps() {
   );
 }
 
-/* ---------------- RIBBON (koyu, statik) ---------------- */
+/* ---------------- RIBBON ---------------- */
 function Ribbon() {
   const chips = ["Teknokent","CE VR Tech","EEG Ready","Klinik Gözetim","Gizlilik & Güvenlik"];
   return (
@@ -268,7 +268,6 @@ function CTA() {
 function Styles(){
   return (
     <style>{`
-/* Koyu palet — BEMFunding havası */
 :root{
   --bg1:#0b1022; --bg2:#171a31;
   --card:#111827cc; --card-brd:#ffffff26;
